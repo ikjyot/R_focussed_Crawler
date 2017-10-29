@@ -29,10 +29,10 @@ for(i in 1:recent_vol){
     al = grep("/article/[0-9]+", pageinfo[[2]], value = TRUE)
     
     #LOOP OVER ALL THE ARTICLE LINKS IN A SINGLE ISSUE AND DOWNLOAD FILES AS DOI.html
-    for(i in 1:length(al)){
-      names = gregexpr("[0-9]{6,7}", al[i])
-      doi = unlist(regmatches(al[i], names))
-      download.file(al[i],paste0("../articles/",doi,".html"))
+    for(p in 1:length(al)){
+      names = gregexpr("[0-9]{6,7}", al[p])
+      doi = unlist(regmatches(al[p], names))
+      download.file(al[p],paste0("../articles/",doi,".html"))
     }
   }
 }
